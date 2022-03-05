@@ -1,5 +1,4 @@
-class Formm 
-{
+class Formm {
   constructor() 
   {
     this.input = createInput("").attribute("placeholder", "Enter your name");

@@ -3,7 +3,7 @@ class Game {
     this.resetTitle = createElement("h2");
     this.resetButton = createButton("");
     //this.playerMoving = false;
-   // this.leftKeyActive = false;
+    this.leftKeyActive = false;
    }
 
   getState() {
@@ -18,23 +18,139 @@ class Game {
     });
   }
 
-  start() {
+  
+  
+
+
+
+  start() 
+  {
     player = new Player();
     playerCount = player.getCount();
 
     forms = new Formm();
     forms.display();
 
-    man = createSprite(50, 50);
+    //this.createmaze();
+
+    edgegroup = new Group();
+
+    edge1 =createSprite(400,380,7,560);
+    
+    edge2 =createSprite(1135,380,7,560);
+    edge3 =createSprite(546.5,100,300,7);
+    edge4 =createSprite(971,100,335,7);
+    edge5 =createSprite(596.5,660,400,7);
+    edge6 =createSprite(1013.5,660,250,7);
+    edge7 =createSprite(885,613.5,7,100);
+    edge8 =createSprite(680,570,7,180);
+    edge9 =createSprite(732.5,530,100,7);
+    edge10 =createSprite(810,595,150,7);
+    edge11 =createSprite(803.5,121.5,7, 50);
+    edge12 =createSprite(1003.5,136.5,7,80);
+    edge13 =createSprite(853.5,175.5,7,50);
+    edge14 =createSprite(898.5,153.5,90,7);
+    edge15 =createSprite(943.5,215.5,7,130);
+    edge16 =createSprite(1061,250,7,200);
+    edge17 =createSprite(1001.75,245,117.5,7);
+    edge18 =createSprite(1095,405,75,7);
+    edge19 =createSprite(803.5,261.5,7,120);
+    edge20 =createSprite(876.3,280.5,141.5,7);
+    edge21 =createSprite(969,347.5,188.25,7);
+    edge22 =createSprite(875,379.5,7,70);
+    edge23 =createSprite(1000,369,7,150);
+    edge24 =createSprite(827.5,379.5,100,7);
+    edge25 =createSprite(827.5,409.5,7,60);
+    edge26 =createSprite(1016.5,447.5,40,7);
+    edge27 =createSprite(1036.5,484,7,80);
+    edge28 =createSprite(1020,527.5,40,7);
+    edge29 =createSprite(936.5,497.5,7,170);
+    edge30 =createSprite(958,582.5,50,7);
+    edge31 =createSprite(1050,620,7,80);
+    edge32 =createSprite(680,340,7,160);
+    edge33 =createSprite(768.5,318,70,7);
+    edge34 =createSprite(681.5,201.5,250,7);
+    edge35 =createSprite(590,340,180,7);
+    edge36 =createSprite(460,270,120,7);
+    edge37 =createSprite(480,440,160,7);
+    edge38 =createSprite(620,480,7,160);
+    edge39 =createSprite(530,580,7,160);
+    edge40 =createSprite(603.5,247.5,7,90);
+    edge41 =createSprite(646.5,400,60,7);
+    edge42 =createSprite(653.5,121.5,7, 50);
+    edge43 =createSprite(559,174.5,7,60);
+    edge44 =createSprite(512.5,141,100,7);
+    edge45 =createSprite(693.5,50,7,100); 
+    edge46 =createSprite(803.5,50,7,100);
+    edge47 =createSprite(750,3.5,106,7);
+
+    edgegroup.add(edge1);
+    edgegroup.add(edge2);
+    edgegroup.add(edge3);
+    edgegroup.add(edge4);
+    edgegroup.add(edge5);
+    edgegroup.add(edge6);
+    edgegroup.add(edge7);
+    edgegroup.add(edge8);
+    edgegroup.add(edge9);
+    edgegroup.add(edge10);
+    edgegroup.add(edge11);
+    edgegroup.add(edge12);
+    edgegroup.add(edge13);
+    edgegroup.add(edge14);
+    edgegroup.add(edge15);
+    edgegroup.add(edge16);
+    edgegroup.add(edge17);
+    edgegroup.add(edge18);
+    edgegroup.add(edge19);
+    edgegroup.add(edge20);
+    edgegroup.add(edge21);
+    edgegroup.add(edge22);
+    edgegroup.add(edge23);
+    edgegroup.add(edge24);
+    edgegroup.add(edge25);
+    edgegroup.add(edge26);
+    edgegroup.add(edge27);
+    edgegroup.add(edge28);
+    edgegroup.add(edge29);
+    edgegroup.add(edge30);
+    edgegroup.add(edge31);
+    edgegroup.add(edge32);
+    edgegroup.add(edge33);
+    edgegroup.add(edge34);
+    edgegroup.add(edge35);
+    edgegroup.add(edge36);
+    edgegroup.add(edge37);
+    edgegroup.add(edge38);
+    edgegroup.add(edge39);
+    edgegroup.add(edge40);
+    edgegroup.add(edge41);
+    edgegroup.add(edge42);
+    edgegroup.add(edge43);
+    edgegroup.add(edge44);
+    edgegroup.add(edge45);
+    edgegroup.add(edge46);
+    edgegroup.add(edge47);
+
+
+    man = createSprite(725,65);
     man.addImage("man1", player1);
-    man.scale = 0.9;
+    man.scale = 0.3;
 
-    child = createSprite(400, 400);
+    child = createSprite(775, 65);
     child.addImage("child1", player2);
-    child.scale = 0.5;
+    child.scale = 0.15;
 
+    
     players = [man, child];
 
+
+
+    //edgegroup.collide(players);
+
+   //edgegroup.collide(man);
+   //edgegroup.collide(child);
+    //man.collide(child);
   }
 
   
@@ -48,11 +164,12 @@ class Game {
     //C39
     this.resetTitle.html("Reset Game");
     this.resetTitle.class("resetText");
-    this.resetTitle.position(width / 2 + 200, 40);
+    this.resetTitle.position(1300, 20);
 
     this.resetButton.class("resetButton");
-    this.resetButton.position(width / 2 + 230, 100);
+    this.resetButton.position(1330, 70);
   }
+
 
   play() 
   {
@@ -62,16 +179,13 @@ class Game {
     Player.getPlayersInfo();
     player.getCarsAtEnd();
 
-    if (allPlayers !== undefined) {
-      //image(track, 0, -height * 5, width, height * 6);
-
-      //this.showFuelBar();
-      //this.showLife();
-      //this.showLeaderboard();
-
+    if (allPlayers !== undefined)
+    {
+     
       //index of the array
       var index = 0;
-      for (var plr in allPlayers) {
+      for (var plr in allPlayers) 
+      {
         //add 1 to the index for every loop
         index = index + 1;
 
@@ -79,48 +193,42 @@ class Game {
         var x = allPlayers[plr].positionX;
         var y = allPlayers[plr].positionY;
 
-       // var currentLife = allPlayers[plr].life;
+        //console.log(x , y);
 
-       /* if(currentLife<= 0){
-          cars[index-1].changeImage("blast");
-          cars[index-1].scale = 0.3;
-        }*/
-
+       
         players[index - 1].position.x = x;
         players[index - 1].position.y = y;
 
-        if (index === player.index) {
+        if (index === player.index) 
+        {
           stroke(10);
           fill("red");
           ellipse(x, y, 60, 60);
 
-          //this.handleFuel(index);
-          //this.handlePowerCoins(index);
-          //this.handleObstacleCollision(index);
-          //this.handleCarACollisionWithCarB(index);
+          //this.handlePlayerCollisionWithEdges(index);
+          //this.handlePlayerCollisionWithPlayer(index);
 
-          if(player.life <=0){
-            this.blast = true;
-            this.playerMoving = false;
-          }
-
-          // Changing camera position in y direction
-         // camera.position.y = players[index - 1].position.y;
+          
+          // Changing camera position in x & y direction
+          //camera.position.y = players[index - 1].position.y;
+          //camera.position.x = players[index - 1].position.x;
         }
       }
 
-      if (this.playerMoving) {
+      /*if (this.playerMoving) {
         player.positionY += 5;
         player.update();
-      }
+      }*/
+
+
 
       // handling keyboard events
       this.handlePlayerControls();
 
       // Finshing Line
-      const finshLine = height * 6 - 100;
+      //const finshLine = height * 6 - 100;
 
-      if (player.positionY > finshLine) {
+      if (player.positionY > 700 ) {
         gameState = 2;
         player.rank += 1;
         Player.updateCarsAtEnd(player.rank);
@@ -131,6 +239,37 @@ class Game {
       drawSprites();
     }
   }
+
+  /*handlePlayerCollisionWithPlayer(index)
+  {
+    if (index === 1) {
+      if (players[index - 1].collide(players[1])) {
+        if (this.leftKeyActive) {
+          player.positionX += 100;
+        } else {
+          player.positionX -= 100;
+        }
+
+        
+        
+
+        player.update();
+      }
+    }
+    if (index === 2) {
+      if (players[index - 1].collide(players[0])) {
+        if (this.leftKeyActive) {
+          player.positionX += 100;
+        } else {
+          player.positionX -= 100;
+        }
+
+        
+
+        player.update();
+      }
+    }
+  }*/
 
   handleResetButton() 
   {
@@ -144,185 +283,55 @@ class Game {
       window.location.reload();
     });
   }
-/*
-  showLife()
-  {
-    push();
-    image(lifeImage, width / 2 - 130, height - player.positionY - 300, 20, 20);
-    fill("white");
-    rect(width / 2 - 100, height - player.positionY - 300, 185, 20);
-    fill("#f50057");
-    rect(width / 2 - 100, height - player.positionY - 300, player.life, 20);
-    noStroke();
-    pop();
-  }
 
-  showFuelBar() 
-  {
 
-    push();
-    image(fuelImage, width / 2 - 130, height - player.positionY - 350, 20, 20);
-    fill("white");
-    rect(width / 2 - 100, height - player.positionY - 350, 185, 20);
-    fill("#ffc400");
-    rect(width / 2 - 100, height - player.positionY - 350, player.fuel, 20);
-    noStroke();
-    pop();
-  }
-
-  showLeaderboard() {
-    var leader1, leader2;
-    var players = Object.values(allPlayers);
-    if (
-      (players[0].rank === 0 && players[1].rank === 0) ||
-      players[0].rank === 1
-    ) {
-      // &emsp;    This tag is used for displaying four spaces.
-      leader1 =
-        players[0].rank +
-        "&emsp;" +
-        players[0].name +
-        "&emsp;" +
-        players[0].score;
-
-      leader2 =
-        players[1].rank +
-        "&emsp;" +
-        players[1].name +
-        "&emsp;" +
-        players[1].score;
-    }
-
-    if (players[1].rank === 1) {
-      leader1 =
-        players[1].rank +
-        "&emsp;" +
-        players[1].name +
-        "&emsp;" +
-        players[1].score;
-
-      leader2 =
-        players[0].rank +
-        "&emsp;" +
-        players[0].name +
-        "&emsp;" +
-        players[0].score;
-    }
-
-    this.leader1.html(leader1);
-    this.leader2.html(leader2);
-  }
-  */
 
   handlePlayerControls() 
   {
-    //if(! this.blast){
-      if (keyIsDown(UP_ARROW)) {
-      //  this.playerMoving = true;
-        player.positionY += 10;
+    //if(!this.playerMoving)
+    
+      if (keyIsDown(UP_ARROW)) 
+      {
+      
+        player.positionY -= 5;
         player.update();
+        
+      }
+
+      if (keyIsDown(DOWN_ARROW) ) 
+      {
+        
+        player.positionY += 5;
+        player.update();
+        
       }
   
-      if (keyIsDown(LEFT_ARROW) ) {
+      if (keyIsDown(LEFT_ARROW) ) 
+      {
         //this.leftKeyActive = true;
         player.positionX -= 5;
         player.update();
+        /*if(players[index-1].collide(edgegroup))
+        {
+          player.positionX += 5;
+          player.update();
+        }*/
+        
       }
   
-      if (keyIsDown(RIGHT_ARROW) ) {
-        //this.leftKeyActive = false;
+      if (keyIsDown(RIGHT_ARROW) ) 
+      {
+        
         player.positionX += 5;
         player.update();
+        
       }
-      if (keyIsDown(DOWN_ARROW) ) {
-        //this.leftKeyActive = false;
-        player.positionX += 5;
-        player.update();
-      }
+     
+    
 
   }
 
- /* handleFuel(index) 
-  {
-    // Adding fuel
-    cars[index - 1].overlap(fuels, function(collector, collected) {
-      player.fuel = 185;
-      //collected is the sprite in the group collectibles that triggered
-      //the event
-      collected.remove();
-    });
-
-    // Reducing Player car fuel
-    if (player.fuel > 0 && this.playerMoving) {
-      player.fuel -= 0.3;
-    }
-
-    if (player.fuel <= 0) {
-      gameState = 2;
-      this.gameOver();
-    }
-  }
-
-  handlePowerCoins(index) 
-  {
-    cars[index - 1].overlap(powerCoins, function(collector, collected) {
-      player.score += 21;
-      player.update();
-      //collected is the sprite in the group collectibles that triggered
-      //the event
-      collected.remove();
-    });
-  }
-
-  handleObstacleCollision(index)
-   {
-    if (cars[index - 1].collide(obstacles)) {
-      if (this.leftKeyActive) {
-        player.positionX += 100;
-      } else {
-        player.positionX -= 100;
-      }
-
-      //Reducing Player Life
-      if (player.life > 0) {
-        player.life -= 185 / 4;
-      }
-
-      player.update();
-    }
-  }
-*/
-  /*handleCarACollisionWithCarB(index)
-  {
-    if(index === 1){
-      if(cars[index-1].collide(cars[1])){
-        if(this.leftKeyActive){
-          player.positionX +=100;
-        }
-        else{
-          player.positionX -=100;
-        }
-        if(player.life>0){
-          player.life -= 185/4;
-        }
-        player.update();
-      }
-    }
-    if(index === 2){
-      if(cars[index-1].collide(cars[0])){
-        if(this.leftKeyActive){
-          player.positionX += 100;
-        }
-        else{
-          player.positionX -= 100;
-        }
-        if(player.life>0){
-          player.life -= 185/4
-        }
-        player.update();
-      }
-    }
-  }*/
+ 
 
   showRank()
   {

@@ -10,10 +10,13 @@ class Player {
   addPlayer() {
     var playerIndex = "players/player" + this.index;
 
-    if (this.index === 1) {
-      this.positionX = width / 2 - 100;
+    if (this.index === 1) 
+    {
+      this.positionX = 725;
+      this.positionY = 65;
     } else {
-      this.positionX = width / 2 + 100;
+      this.positionX = 775;
+      this.positionY = 65;
     }
 
     database.ref(playerIndex).set({
@@ -63,7 +66,8 @@ class Player {
     });
   }
 
-  getCarsAtEnd() {
+  getCarsAtEnd()
+  {
     database.ref("carsAtEnd").on("value", data => {
       this.rank = data.val();
     });
